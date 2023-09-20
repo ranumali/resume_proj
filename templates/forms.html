@@ -1,0 +1,79 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><form action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+     {{a.as_p}}
+    <button>SUBMIT</button>
+    <a href="/resume/">resume</a>
+</div>
+</form> {% endcomment %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        .container{
+            padding: 20px;
+            box-shadow: 2px 2px 20px #fff;
+            background-color: white;
+            width:50%;
+        }
+        h2{
+            text-align: center;
+            font-family: sans-serif;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 2px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid grey;
+    
+        }
+
+        input{
+
+            width:90%;
+            height:30px;
+        }
+     </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>RESUME FORM</h2>
+
+        <form class="row g-3" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for i in a %}
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">{{i.label_tag}}</label>
+              {{i}}
+            </div>
+            {% endfor %}
+            <button class = "btn btn-primary">submit</button>
+        </form>
+    <p><a href="/get/">resume</a></p>
+</div>
+</body>
+</html>
